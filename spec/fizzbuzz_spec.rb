@@ -37,4 +37,15 @@ describe "fizzbuzz" do
     expect(result).to eq [2,4,8]  
   end
 
+  it "returns error when the input is not an integer - string" do
+    expect { fizzbuzz("buzz") }. to raise_error("not an integer")
+  end
+
+  it "returns error when the input is not an integer - array" do
+    expect { fizzbuzz(["buzz"]) }. to raise_error("not an integer")
+  end
+
+  it "returns error when the input is not an integer - nil" do
+    expect { fizzbuzz(nil) }. to raise_error("not an integer")
+  end
 end
